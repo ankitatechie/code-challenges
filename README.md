@@ -1,4 +1,4 @@
-# webpack-react-redux
+# react-redux-app
 A simple react-redux codebase app showing coding challenges from other platforms
 
 Contains: 
@@ -35,4 +35,4 @@ It should look something like the above image.
 
 ## Click here to see the demo 
 
-<a href="http://ankitatechie.github.io/code-challenges">The Demo</a>
+<a href="http://ankitatechie.github.io/code-challenges-web">The Demo</a>
