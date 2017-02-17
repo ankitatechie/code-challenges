@@ -5,7 +5,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     entry: [
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/only-dev-server',
@@ -36,13 +36,6 @@ module.exports = {
         failOnError: false
     },
     module: {
-        preLoaders: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'eslint'
-            }
-        ],
         loaders: [
             {
                 test: /\.js?$/,
@@ -55,9 +48,9 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass'
+                loaders: ['style', 'css', 'sass']
             },
-            { test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff' },
+            { test: /\.woff(2)?(\?[a-z0-9#=&.]+)?$/, loader: 'url&mimetype=application/font-woff' },
             { test: /\.(ttf|eot|svg)(\?[a-z0-9#=&.]+)?$/, loader: 'file' }
         ]
     }

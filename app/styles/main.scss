@@ -1,0 +1,35 @@
+@import 
+    'variables',
+    'mixins',
+    'navbar',
+    'cover',
+    'footer',
+    'challenges';
+
+body {
+    font-family: 'Open Sans',sans-serif;
+    line-height: 1.4em;
+    font-size: 14px;
+    background: $primary;
+    margin: 0;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    box-sizing: content-box;
+}
+
+a {
+    color: $color__dark-text;
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 45px;
+    padding: 0 15px;
+
+    @media only screen and (max-width: 768px) {
+        margin: 0;
+    }
+}

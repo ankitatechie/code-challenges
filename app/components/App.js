@@ -1,16 +1,17 @@
 import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
-import { footer } from '../styles/footer.scss';
+import main from '../styles/main.scss';
 
-const App = ({ children }) =>
-    <div>
-        <h1>Filter table</h1>
-        { children }
-        <footer className={footer}>
-            <Link to="/">Filterable Table</Link>
-            <Link to="/about">About</Link>
-        </footer>
-    </div>;
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                {React.cloneElement(this.props.children, this.props)}
+            </div>
+        );
+    }
+}
+
+//  ref='main'
 
 App.propTypes = {
     children: PropTypes.object

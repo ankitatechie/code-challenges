@@ -1,12 +1,19 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
-import App from './components/App';
-import FilterableTable from './containers/FilterableTable';
-import About from './components/About';
+import { Route, Router, IndexRoute } from 'react-router';
+import { Provider } from 'react-redux';
+import store, { history } from './store';
 
-export default (
-	<Route path="/" component={App}>
-		<IndexRoute component={FilterableTable} />
-		<Route path="/about" component={About} />
-	</Route>
+import App from './components/App';
+import Home from './components/Home';
+
+const router = (
+  <Provider store={store}>
+    <Router history={history}>
+      <Route path="/" component={App}>
+        <IndexRoute component={Home} />
+      </Route>
+    </Router>
+  </Provider>
 );
+
+export default router;
