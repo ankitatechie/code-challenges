@@ -3,23 +3,24 @@ import ChallengesList from '../components/Challenges';
 import challengesData from '../data/challenges';
 
 const getVisibleChallenges = (challenges, filter) => {
+    let filteredChallenges;
     switch (filter) {
         case 'SHOW_ALL':
-            return challenges
+            return challenges;
         case 'SHOW_HIRING':
-            challenges = challenges.filter(challenge =>
+            filteredChallenges = challenges.filter(challenge =>
                 challenge.challenge_type.split(' ')[0] === 'Hiring'
             );
-          return [...challenges];
+            return [...filteredChallenges];
         case 'SHOW_MONTHLY':
-            challenges = challenges.filter(challenge =>
+            filteredChallenges = challenges.filter(challenge =>
                 challenge.challenge_type.split(' ')[0] === 'Monthly'
             );
-            return [...challenges];
+            return [...filteredChallenges];
         default:
             return challenges;
     }
-}
+};
 
 const mapStateToProps = (state) => ({
     challenges: getVisibleChallenges(challengesData, state.challenges)

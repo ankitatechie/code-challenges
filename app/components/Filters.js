@@ -17,8 +17,12 @@ const Filters = ({ onChange }) => {
                 <label htmlFor="hiring">Hiring Challenges</label>
             </span>
         </div>
-    )
-}
+    );
+};
+
+Filters.propTypes = {
+    onChange: PropTypes.func
+};
 
 export default Filters;
 

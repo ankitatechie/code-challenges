@@ -35,7 +35,6 @@ class Navbar extends React.Component {
     }
 
     render() {
-        const filterChallenges = this.props.filterChallenges;
         return (
             <header className="navbar" ref="navbar">
                 <div className="container">
