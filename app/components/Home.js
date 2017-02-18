@@ -1,39 +1,18 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-import filterData from '../actions/actionCreators';
 import Navbar from './Navbar';
 import Cover from './Cover';
-import Challenges from './Challenges';
+import VisibleChallenges from '../containers/VisibleChallenges';
 import Footer from './footer';
 
-const Home = ({ challenges, filterChallenges }) => {
+const Home = () => {
     return (
         <div>
-            <Navbar filterChallenges={filterChallenges} />
+            <Navbar />
             <Cover />
-            <Challenges challenges={challenges} />
+            <VisibleChallenges />
             <Footer />
         </div>
     );
 };
 
-Home.propTypes = {
-    challenges: PropTypes.array,
-    filterChallenges: PropTypes.func
-};
-
-function mapStateToProps(state) {
-    return {
-        challenges: state.challenges
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-    return {
-        filterChallenges: (filter) => {
-            dispatch(filterData(filter));
-        }
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;

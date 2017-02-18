@@ -1,8 +1,10 @@
-const filterChallenges = (filter) => {
+const setVisibilityFilter = (filter) => {
     return {
-        type: 'FILTER_CHALLENGES',
+        type: 'SET_VISIBILITY_FILTER',
         filter
     };
 };
 
-export default filterChallenges;
+export default setVisibilityFilter;
+
+

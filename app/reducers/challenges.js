@@ -1,18 +1,11 @@
-import challenges from '../data/challenges';
-
-const challengesReducer = (state = challenges, action) => {
-    switch (action.type) {
-        case 'FILTER_CHALLENGES':
-            const filteredData = [];
-            state.map(function(data) {
-                if (data.challenge_type.split(' ')[0] === action.filter) {
-                    filteredData.push(data);
-                }
-            });
-            return [...filteredData];
-        default:
-            return state;
-    }
-};
+const challengesReducer = (state = 'SHOW_ALL', action) => {
+  switch (action.type) {
+    case 'SET_VISIBILITY_FILTER':
+      return action.filter
+    default:
+      return state
+  }
+}
 
 export default challengesReducer;
+

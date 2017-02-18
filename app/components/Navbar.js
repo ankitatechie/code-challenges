@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import Filters from './Filters';
+import FilterLink from '../containers/FilterLink';
 
 class Navbar extends React.Component {
     constructor() {
@@ -43,7 +43,7 @@ class Navbar extends React.Component {
                         <img src="https://hackerearth.global.ssl.fastly.net/static/hackerearth/images/logo/HE_logo.png" />
                     </a>
                     <div className="navbar__filters">
-                        <Filters filterChallenges={filterChallenges} />
+                        <FilterLink />
                     </div>
                     <div className="menu-icon" onClick={() => this.showNavbar()}>
                         <span></span>
@@ -53,17 +53,13 @@ class Navbar extends React.Component {
                 </div>
                 <div className="mobile-nav" ref="mobileNavbar">
                     <div className="navbar__filters">
-                        <Filters filterChallenges={filterChallenges} />
+                        <FilterLink />
                     </div>
                 </div>
             </header>
         );
     }
 }
-
-Navbar.propTypes = {
-    filterChallenges: PropTypes.func
-};
 
 export default Navbar;
 

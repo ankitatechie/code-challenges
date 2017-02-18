@@ -12,7 +12,7 @@
 .cover {
   @include add-transitions(all .4s);
 
-  background: url('https://images.pexels.com/photos/99611/pexels-photo-99611.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb') center/cover;
+  background: url('https://images.pexels.com/photos/205508/pexels-photo-205508.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb') center/cover;
   width: 100%;
   height: 600px;
   position: relative;
@@ -26,7 +26,7 @@
     width: 100%;
     text-align: center;
     vertical-align: middle;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.2);
     color: $color__white;
   }
 
@@ -60,6 +60,10 @@
   &:hover {
     -webkit-filter: grayscale(0);
     filter: grayscale(0);
+
+    .inner {
+      background-color: transparent;
+    }
   }
 
   @media only screen and (max-width: 768px) {

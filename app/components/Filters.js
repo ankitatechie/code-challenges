@@ -1,17 +1,24 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
-const Filters = () =>
-    <div>
-        <span className="navbar__filters-item">
-            <input type="checkbox" value="monthly" onChange={() => this.props.filterChallenges('Monthly')}  />
-            <label name="monthly">Monthly Challenges</label>
-        </span>
-        <span className="navbar__filters-item">
-            <input type="checkbox" value="hiring" onChange={() => this.props.filterChallenges('Hiring')} />
-            <label name="hiring">Hiring Challenges</label>
-        </span>
-    </div>;
+const Filters = ({ onChange }) => {
+    return (
+        <div>
+            <span className="navbar__filters-item">
+                <input type="radio" name="filters" id="all" onChange={() => onChange('SHOW_ALL')} />
+                <label htmlFor="all">All Challenges</label>
+            </span>
+            <span className="navbar__filters-item">
+                <input type="radio" name="filters" id="monthly" onChange={() => onChange('SHOW_MONTHLY')} />
+                <label htmlFor="monthly">Monthly Challenges</label>
+            </span>
+            <span className="navbar__filters-item">
+                <input type="radio" name="filters" id="hiring" onChange={() => onChange('SHOW_HIRING')} />
+                <label htmlFor="hiring">Hiring Challenges</label>
+            </span>
+        </div>
+    )
+}
 
 export default Filters;
 
